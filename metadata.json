@@ -1,0 +1,6 @@
+{
+  "name": "Subtriva Landing Page",
+  "description": "Pre-launch landing page for Subtriva, a subcontractor compliance tracking platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

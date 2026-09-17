@@ -1,0 +1,31 @@
+--- app/dashboard/layout.tsx
++++ app/dashboard/layout.tsx
+@@ -9,2 +9,3 @@
+ import { usePathname } from 'next/navigation'
++import { createClient } from '@/lib/supabase/client'
+ 
+@@ -19,10 +20,11 @@
+   const pathname = usePathname()
+-  const [userEmail, setUserEmail] = useState('demo@subtriva.com')
++  const [userEmail, setUserEmail] = useState('')
++  const [initials, setInitials] = useState('U')
+ 
+   useEffect(() => {
+     setMounted(true)
+     const getUser = async () => {
+-      const { data: { session } } = await supabase.auth.getSession()
+-      if (session?.user?.email) {
+-        setUserEmail(session.user.email)
++      const supabase = createClient()
++      const { data: { user } } = await supabase.auth.getUser()
++      if (user?.email) {
++        setUserEmail(user.email)
++        setInitials(user.email.charAt(0).toUpperCase())
+       }
+@@ -351,3 +353,3 @@
+               <div className="h-8 w-8 rounded-full bg-gradient-to-br from-[#F25900] to-[#FF8A4C] flex items-center justify-center text-white font-bold shrink-0 shadow-sm">
+-                {userEmail?.charAt(0).toUpperCase()}
++                {initials}
+               </div>
+-              <span className="text-sm font-medium text-slate-700 dark:text-slate-300 hidden sm:block">{userEmail.split('@')[0]}</span>
++              <span className="text-sm font-medium text-slate-700 dark:text-slate-300 hidden sm:block">{userEmail ? userEmail.split('@')[0] : 'User'}</span>
