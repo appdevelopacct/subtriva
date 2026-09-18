@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { User, Bell, Palette, Settings as SettingsIcon, FileText, Users, CreditCard, Link as LinkIcon, Loader2 } from 'lucide-react'
+import { User, Bell, Palette, Settings as SettingsIcon, FileText, Users, CreditCard, Link as LinkIcon, Loader2, Sun, Moon, Laptop, Check } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { useToastStore } from '@/lib/toast-store'
 import { createClient } from '@/lib/supabase/client'
@@ -162,27 +162,48 @@ export default function SettingsPage() {
               {activeTab === 'appearance' && (
                 <div className="space-y-6 animate-in fade-in duration-300 max-w-2xl">
                   <div>
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white">Appearance</h3>
-                    <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">Customize how Subtriva looks on your device.</p>
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white">Theme & Appearance</h3>
+                    <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
+                      Customize how Subtriva looks. By default, Subtriva automatically matches your device preference.
+                    </p>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     {[
-                      { id: 'light', label: 'Light', desc: 'Clear and readable' },
-                      { id: 'dark', label: 'Dark', desc: 'Easy on the eyes' },
-                      { id: 'system', label: 'System', desc: 'Matches device' }
-                    ].map(t => (
-                      <button
-                        key={t.id}
-                        type="button"
-                        onClick={() => setTheme(t.id)}
-                        className={`flex flex-col text-left p-4 rounded-xl border-2 transition-all ${
-                          theme === t.id ? 'border-[#F25900] bg-[#F25900]/5' : 'border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600'
-                        }`}
-                      >
-                        <span className="font-semibold text-slate-900 dark:text-white capitalize">{t.label}</span>
-                        <span className="text-xs text-slate-500 mt-1">{t.desc}</span>
-                      </button>
-                    ))}
+                      { id: 'light', label: 'Light Mode', desc: 'Clean, crisp high-contrast layout', icon: Sun },
+                      { id: 'dark', label: 'Dark Mode', desc: 'Deep charcoal, easy on the eyes', icon: Moon },
+                      { id: 'system', label: 'Device Default', desc: 'Automatically matches system', icon: Laptop }
+                    ].map(t => {
+                      const IconComponent = t.icon
+                      const isSelected = theme === t.id
+                      return (
+                        <button
+                          key={t.id}
+                          type="button"
+                          onClick={() => {
+                            setTheme(t.id)
+                            addToast(`Theme switched to ${t.label}`, 'info')
+                          }}
+                          className={`flex flex-col text-left p-4 rounded-xl border-2 transition-all cursor-pointer relative ${
+                            isSelected
+                              ? 'border-[#FF6B35] bg-[#FF6B35]/5 dark:bg-[#FF6B35]/10 shadow-sm'
+                              : 'border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 bg-white dark:bg-slate-900'
+                          }`}
+                        >
+                          <div className="flex items-center justify-between w-full mb-3">
+                            <div className={`p-2 rounded-lg ${isSelected ? 'bg-[#FF6B35] text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300'}`}>
+                              <IconComponent className="w-5 h-5" />
+                            </div>
+                            {isSelected && (
+                              <span className="flex items-center justify-center w-5 h-5 rounded-full bg-[#FF6B35] text-white">
+                                <Check className="w-3.5 h-3.5" />
+                              </span>
+                            )}
+                          </div>
+                          <span className="font-semibold text-slate-900 dark:text-white text-sm">{t.label}</span>
+                          <span className="text-xs text-slate-500 dark:text-slate-400 mt-1">{t.desc}</span>
+                        </button>
+                      )
+                    })}
                   </div>
                 </div>
               )}

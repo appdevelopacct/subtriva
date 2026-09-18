@@ -18,35 +18,35 @@ export default function SubcontractorSection() {
         <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-24 max-w-5xl mx-auto">
           <div className="flex flex-col gap-6 w-full lg:w-[380px] shrink-0">
             
-            <div className="bg-white/60 dark:bg-[#1E293B]/40 backdrop-blur-xl shadow-lg border border-white/50 dark:border-slate-700/50 p-6 rounded-2xl border border-slate-200/60 dark:border-slate-700/50 shadow-sm w-full max-w-sm mx-auto">
+            <div className="bg-white dark:bg-[#1E293B]/60 p-6 rounded-2xl border border-slate-200 dark:border-slate-700/60 shadow-sm w-full max-w-sm mx-auto">
               <div className="flex flex-col gap-4 text-center items-center font-medium text-slate-700 dark:text-slate-200">
                 <div className="flex flex-col items-center gap-2">
-                  <div className="w-10 h-10 bg-slate-100/50 dark:bg-slate-800/50 backdrop-blur-sm rounded-full flex items-center justify-center">
+                  <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center">
                     <Shield className="w-5 h-5 text-slate-500 dark:text-slate-400" />
                   </div>
                   <span>GC</span>
                 </div>
-                <ArrowDown className="w-4 h-4 text-slate-300" />
-                <div className="text-[#FF6B35] bg-orange-50 px-4 py-2 rounded-full text-sm font-bold border border-orange-100">
+                <ArrowDown className="w-4 h-4 text-slate-300 dark:text-slate-600" />
+                <div className="text-[#FF6B35] bg-orange-50 dark:bg-orange-950/40 px-4 py-2 rounded-full text-sm font-bold border border-orange-200/60 dark:border-orange-900/50">
                   Secure Upload Link
                 </div>
-                <ArrowDown className="w-4 h-4 text-slate-300" />
+                <ArrowDown className="w-4 h-4 text-slate-300 dark:text-slate-600" />
                 <div className="flex flex-col items-center gap-2">
-                  <div className="w-10 h-10 bg-slate-100/50 dark:bg-slate-800/50 backdrop-blur-sm rounded-full flex items-center justify-center">
+                  <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center">
                     <Smartphone className="w-5 h-5 text-slate-500 dark:text-slate-400" />
                   </div>
                   <span>Subcontractor Phone</span>
                 </div>
-                <ArrowDown className="w-4 h-4 text-slate-300" />
+                <ArrowDown className="w-4 h-4 text-slate-300 dark:text-slate-600" />
                 <div className="flex flex-col items-center gap-2">
                   <div className="w-10 h-10 bg-[#FF6B35]/10 rounded-full flex items-center justify-center">
                     <FileUp className="w-5 h-5 text-[#FF6B35]" />
                   </div>
                   <span>Upload Documents</span>
                 </div>
-                <ArrowDown className="w-4 h-4 text-slate-300" />
+                <ArrowDown className="w-4 h-4 text-slate-300 dark:text-slate-600" />
                 <div className="flex flex-col items-center gap-2">
-                  <div className="w-10 h-10 bg-emerald-50 rounded-full flex items-center justify-center">
+                  <div className="w-10 h-10 bg-emerald-50 dark:bg-emerald-950/40 rounded-full flex items-center justify-center">
                     <Shield className="w-5 h-5 text-emerald-500" />
                   </div>
                   <span>GC Gets Updated</span>

@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Check } from 'lucide-react';
 import Link from 'next/link';
+import { openEarlyAccessPopup } from '@/lib/tally';
 
 export default function Pricing() {
   const [isAnnual, setIsAnnual] = useState(false);
@@ -73,7 +74,7 @@ export default function Pricing() {
             Start simple. Scale as your subcontractor list grows.
           </p>
           <div className="text-base font-bold text-[#FF6B35] mb-8">
-            1 Month Free Trial • No Credit Card Required • Cancel Anytime
+            14 Days Free Trial • No Credit Card Required • Cancel Anytime
           </div>
           
           <div className="flex items-center justify-center gap-4">
@@ -123,9 +124,16 @@ export default function Pricing() {
                 ))}
               </ul>
               
-              <Link href="/login" className={`w-full block text-center bg-[#FF6B35] hover:bg-[#E05928] text-white font-medium text-sm px-5 py-3.5 rounded-full transition-all shadow-md focus:outline-none focus:ring-4 ${plan.popular ? 'shadow-[#FF6B35]/20 focus:ring-[#FF6B35]/30' : 'bg-slate-800 hover:bg-slate-900 focus:ring-slate-800/20 shadow-slate-800/20'}`}>
-                Get Started
-              </Link>
+              <button
+                type="button"
+                data-tally-open="PdQkeb"
+                data-tally-emoji-text="👋"
+                data-tally-emoji-animation="wave"
+                onClick={openEarlyAccessPopup}
+                className={`w-full block text-center cursor-pointer font-medium text-sm px-5 py-3.5 rounded-full transition-all shadow-md focus:outline-none focus:ring-4 text-white ${plan.popular ? 'bg-[#FF6B35] hover:bg-[#E05928] shadow-[#FF6B35]/20 focus:ring-[#FF6B35]/30' : 'bg-slate-800 hover:bg-slate-900 focus:ring-slate-800/20 shadow-slate-800/20'}`}
+              >
+                Join Early Access
+              </button>
             </div>
           ))}
         </div>

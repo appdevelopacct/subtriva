@@ -42,7 +42,7 @@ export default function ProblemSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {problems.map((problem, i) => (
             <div key={i} className="p-8 rounded-2xl bg-white dark:bg-slate-800/40 backdrop-blur-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-200/60 dark:border-slate-700/50 hover:border-[#FF6B35]/50">
-              <div className="w-12 h-12 rounded-xl bg-white/60 dark:bg-[#1E293B]/40 backdrop-blur-xl shadow-lg border border-white/50 dark:border-slate-700/50 border border-slate-200/60 dark:border-slate-700/50 flex items-center justify-center mb-6 shadow-sm">
+              <div className="w-12 h-12 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/60 flex items-center justify-center mb-6 shadow-sm">
                 {problem.icon}
               </div>
               <h3 className="text-sm font-bold text-slate-500 dark:text-slate-400 tracking-wider mb-3">

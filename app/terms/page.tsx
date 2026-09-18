@@ -15,7 +15,7 @@ export default function TermsOfService() {
         <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-8 sm:p-12">
           <h1 className="text-3xl font-extrabold text-slate-900 dark:text-white mb-6">Terms of Service</h1>
           <div className="space-y-6 text-slate-600 dark:text-slate-400">
-            <p>Last updated: {new Date().toLocaleDateString()}</p>
+            <p>Last updated: September 18, 2026</p>
             
             <section>
               <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3">1. Acceptance of Terms</h2>

@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import { openEarlyAccessPopup } from '@/lib/tally';
 
 export default function FAQ() {
   const faqs = [
@@ -56,9 +57,16 @@ export default function FAQ() {
         <div className="text-center bg-transparent p-12 rounded-3xl border border-slate-200/60 dark:border-slate-700/50">
           <h2 className="text-3xl font-bold text-[#0F172A] dark:text-white mb-4">Ready to Stop Chasing Documents?</h2>
           <p className="text-lg text-slate-600 dark:text-slate-300 mb-8 font-medium">Collect. Track. Stay Compliant.</p>
-          <Link href="/login" className="bg-[#FF6B35] hover:bg-[#E05928] text-white font-semibold text-lg px-8 py-4 rounded-full shadow-lg shadow-[#FF6B35]/20 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#FF6B35]/30 inline-block">
-            Get Started
-          </Link>
+          <button
+            type="button"
+            data-tally-open="PdQkeb"
+            data-tally-emoji-text="👋"
+            data-tally-emoji-animation="wave"
+            onClick={openEarlyAccessPopup}
+            className="bg-[#FF6B35] hover:bg-[#E05928] text-white font-semibold text-lg px-8 py-4 rounded-full shadow-lg shadow-[#FF6B35]/20 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#FF6B35]/30 inline-block cursor-pointer"
+          >
+            Join Early Access
+          </button>
         </div>
       </div>
     </section>

@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { openEarlyAccessPopup } from '@/lib/tally';
 
 export default function BottomCTA() {
   const benefits = [
@@ -42,13 +43,17 @@ export default function BottomCTA() {
           
           className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10"
         >
-          <Link 
-            href="/login" 
-            className="w-full sm:w-auto bg-[#FF6B35] hover:bg-[#E05928] text-white font-semibold text-lg px-8 py-4 rounded-full transition-all shadow-lg shadow-[#FF6B35]/25 focus:outline-none focus:ring-4 focus:ring-[#FF6B35]/30 flex items-center justify-center gap-2 group"
+          <button 
+            type="button"
+            data-tally-open="PdQkeb"
+            data-tally-emoji-text="👋"
+            data-tally-emoji-animation="wave"
+            onClick={openEarlyAccessPopup}
+            className="w-full sm:w-auto bg-[#FF6B35] hover:bg-[#E05928] text-white font-semibold text-lg px-8 py-4 rounded-full transition-all shadow-lg shadow-[#FF6B35]/25 focus:outline-none focus:ring-4 focus:ring-[#FF6B35]/30 flex items-center justify-center gap-2 group cursor-pointer"
           >
-            Get Started
+            Join Early Access
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Link>
+          </button>
           <Link 
             href="#pricing" 
             className="w-full sm:w-auto bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-medium text-lg px-8 py-4 rounded-full transition-all border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700 flex items-center justify-center"

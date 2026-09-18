@@ -5,6 +5,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { ThemeToggle } from '@/components/ThemeToggle';
+import { openEarlyAccessPopup } from '@/lib/tally';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -56,16 +58,28 @@ export default function Navbar() {
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-4">
-            <Link 
-              href="/login" 
-              className="bg-[#FF6B35] hover:bg-[#E05928] text-white font-medium text-sm px-5 py-2.5 rounded-full transition-all shadow-md shadow-[#FF6B35]/20 focus:outline-none focus:ring-4 focus:ring-[#FF6B35]/30 inline-flex items-center justify-center gap-2"
+          <div className="hidden md:flex items-center gap-3">
+            <ThemeToggle />
+            <Link
+              href="/login"
+              className="text-slate-700 dark:text-slate-300 hover:text-[#FF6B35] dark:hover:text-[#FF6B35] text-sm font-medium px-3 py-2 transition-colors"
             >
-              Get Started
+              Sign In
             </Link>
+            <button
+              type="button"
+              data-tally-open="PdQkeb"
+              data-tally-emoji-text="👋"
+              data-tally-emoji-animation="wave"
+              onClick={openEarlyAccessPopup}
+              className="bg-[#FF6B35] hover:bg-[#E05928] text-white font-medium text-sm px-5 py-2.5 rounded-full transition-all shadow-md shadow-[#FF6B35]/20 focus:outline-none focus:ring-4 focus:ring-[#FF6B35]/30 inline-flex items-center justify-center gap-2 cursor-pointer"
+            >
+              Join Early Access
+            </button>
           </div>
 
           <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white p-2"
@@ -79,7 +93,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white/90 dark:bg-[#0B1120]/95 backdrop-blur-xl border-b border-slate-200/60 dark:border-slate-800/50 shadow-lg py-4 px-4 flex flex-col gap-4">
+        <div className="md:hidden absolute top-full left-0 w-full bg-white/95 dark:bg-[#0B1120]/95 backdrop-blur-xl border-b border-slate-200/60 dark:border-slate-800/50 shadow-lg py-4 px-4 flex flex-col gap-4">
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -91,8 +105,25 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="pt-2 flex flex-col gap-3">
-            <Link href="/login" onClick={() => setMobileMenuOpen(false)} className="w-full bg-[#FF6B35] text-white text-center rounded-full font-medium py-3">
-              Get Started
+            <button
+              type="button"
+              data-tally-open="PdQkeb"
+              data-tally-emoji-text="👋"
+              data-tally-emoji-animation="wave"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                openEarlyAccessPopup();
+              }}
+              className="w-full bg-[#FF6B35] text-white text-center rounded-full font-medium py-3 cursor-pointer shadow-md shadow-[#FF6B35]/20"
+            >
+              Join Early Access
+            </button>
+            <Link
+              href="/login"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full text-center text-slate-700 dark:text-slate-300 font-medium py-2 text-sm hover:text-[#FF6B35]"
+            >
+              Sign In to Account
             </Link>
           </div>
         </div>

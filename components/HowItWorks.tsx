@@ -49,12 +49,12 @@ export default function HowItWorks() {
         {/* Desktop horizontal timeline */}
         <div className="hidden lg:block relative">
           {/* Connecting Line */}
-          <div className="absolute top-6 left-[5%] right-[5%] h-0.5 bg-slate-200 -z-10"></div>
+          <div className="absolute top-6 left-[5%] right-[5%] h-0.5 bg-slate-200 dark:bg-slate-800 -z-10"></div>
           
           <div className="grid grid-cols-5 gap-4">
             {steps.map((step, i) => (
               <div key={i} className="relative flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-full bg-[#FF6B35] border-4 border-white shadow-sm flex items-center justify-center mb-6 z-10">
+                <div className="w-12 h-12 rounded-full bg-[#FF6B35] border-4 border-white dark:border-[#0B1120] shadow-sm flex items-center justify-center mb-6 z-10">
                   {step.icon}
                 </div>
                 <div className="text-sm font-bold text-[#FF6B35] tracking-widest mb-2">{step.num}</div>
@@ -68,11 +68,11 @@ export default function HowItWorks() {
         {/* Mobile vertical timeline */}
         <div className="lg:hidden relative pl-6 space-y-12">
           {/* Connecting Line */}
-          <div className="absolute top-2 bottom-2 left-[21px] w-0.5 bg-slate-200"></div>
+          <div className="absolute top-2 bottom-2 left-[21px] w-0.5 bg-slate-200 dark:bg-slate-800"></div>
           
           {steps.map((step, i) => (
             <div key={i} className="relative flex items-start gap-6">
-              <div className="w-10 h-10 rounded-full bg-[#FF6B35] border-4 border-white shadow-sm flex items-center justify-center flex-shrink-0 z-10 -ml-[19px]">
+              <div className="w-10 h-10 rounded-full bg-[#FF6B35] border-4 border-white dark:border-[#0B1120] shadow-sm flex items-center justify-center flex-shrink-0 z-10 -ml-[19px]">
                 {step.icon}
               </div>
               <div>

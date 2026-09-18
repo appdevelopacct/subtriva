@@ -31,7 +31,7 @@ export default function DashboardPreview() {
             </div>
             
             {/* Screen Content Wrapper */}
-            <div className="relative bg-white/60 dark:bg-[#1E293B]/40 backdrop-blur-xl shadow-lg border border-white/50 dark:border-slate-700/50 flex flex-col w-full h-full">
+            <div className="relative bg-white dark:bg-[#1E293B] flex flex-col w-full h-full">
               
               {/* macOS Browser Title Bar */}
               <div className="bg-slate-100/50 dark:bg-slate-800/50 backdrop-blur-sm px-2 sm:px-4 py-1 sm:py-2 flex items-center border-b border-slate-200/60 dark:border-slate-700/50">
@@ -60,7 +60,7 @@ export default function DashboardPreview() {
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-5 border-b border-slate-200/60 dark:border-slate-700/50 divide-x divide-slate-100 bg-white/60 dark:bg-[#1E293B]/40 backdrop-blur-xl shadow-lg border border-white/50 dark:border-slate-700/50">
+              <div className="grid grid-cols-5 border-b border-slate-200 dark:border-slate-700/60 divide-x divide-slate-100 dark:divide-slate-800 bg-white dark:bg-[#1E293B]">
                 <div className="p-1.5 sm:p-4 lg:p-6 relative flex flex-col justify-center">
                   <div className="text-[5px] sm:text-[9px] lg:text-sm text-slate-500 dark:text-slate-400 font-medium mb-0.5 sm:mb-2 truncate">Total Subs</div>
                   <div className="text-[10px] sm:text-xl lg:text-3xl font-bold text-slate-900 dark:text-white">37</div>
@@ -88,7 +88,7 @@ export default function DashboardPreview() {
               </div>
 
               {/* Desktop Table - Fully Fluid */}
-              <div className="flex-1 min-h-0 bg-white/60 dark:bg-[#1E293B]/40 backdrop-blur-xl shadow-lg border border-white/50 dark:border-slate-700/50">
+              <div className="flex-1 min-h-0 bg-white dark:bg-[#1E293B]">
                 <table className="w-full text-left table-fixed h-full">
                   <thead className="text-[5px] sm:text-[9px] lg:text-xs text-slate-500 dark:text-slate-400 uppercase bg-slate-50/50 dark:bg-slate-800/30 backdrop-blur-sm border-b border-slate-200/60 dark:border-slate-700/50 block w-full">
                     <tr className="flex w-full">

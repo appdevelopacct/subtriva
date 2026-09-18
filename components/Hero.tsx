@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { FileCheck, AlertTriangle, AlertCircle, Clock, Search, Filter } from 'lucide-react';
+import { openEarlyAccessPopup } from '@/lib/tally';
 
 export default function Hero() {
   return (
@@ -30,9 +31,16 @@ export default function Hero() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-3">
-            <Link href="/login" className="w-full sm:w-auto bg-[#FF6B35] hover:bg-[#E05928] text-white text-lg px-8 py-4 rounded-lg font-medium transition-colors shadow-lg shadow-[#FF6B35]/20 focus:ring-4 focus:ring-[#FF6B35]/30 focus:outline-none flex items-center justify-center">
-              Get Started
-            </Link>
+            <button
+              type="button"
+              data-tally-open="PdQkeb"
+              data-tally-emoji-text="👋"
+              data-tally-emoji-animation="wave"
+              onClick={openEarlyAccessPopup}
+              className="w-full sm:w-auto bg-[#FF6B35] hover:bg-[#E05928] text-white text-lg px-8 py-4 rounded-lg font-medium transition-colors shadow-lg shadow-[#FF6B35]/20 focus:ring-4 focus:ring-[#FF6B35]/30 focus:outline-none flex items-center justify-center cursor-pointer"
+            >
+              Join Early Access
+            </button>
             <a 
               href="#how-it-works"
               className="w-full sm:w-auto bg-white/60 dark:bg-[#1E293B]/40 backdrop-blur-xl border border-slate-200/60 dark:border-slate-700/50 hover:border-slate-300 text-slate-700 dark:text-slate-200 px-8 py-4 rounded-lg font-medium transition-colors text-lg inline-block focus:ring-4 focus:ring-slate-100 focus:outline-none"
@@ -41,7 +49,7 @@ export default function Hero() {
             </a>
           </div>
           <p className="text-sm text-slate-500 dark:text-slate-400 font-medium mb-16">
-            1 month free trial • No credit card required • Cancel anytime
+            14 days free trial • No credit card required • Cancel anytime
           </p>
           
           <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">

@@ -41,7 +41,7 @@ export default function Footer() {
 
         </div>
         
-        <div className="text-center md:text-left border-t border-slate-800 dark:border-slate-800/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="text-center md:text-left border-t border-slate-100 dark:border-slate-800/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-slate-500 dark:text-slate-400 text-sm">
             © 2026 Subtriva. All rights reserved.
           </p>
